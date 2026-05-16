@@ -31,12 +31,6 @@ export class LoginPage  extends BasePage{
         return await locator.textContent();
     }
 
-/** 
-    async getErrorMessageWhenInvalidCred() {
-        const errorMsg = await this.ErrorMessageWhenInvalidCredential.textContent()
-        return errorMsg;
-    }
-**/
     async getLeftSideMenuListAndClickOnSpecificMenu() {
         let counts = await this.leftsideMenuList.count();
         console.log(counts)
