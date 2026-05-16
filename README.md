@@ -1,2 +1,27 @@
-# playwright-js-hrms-framework
-Scalable Playwright + JavaScript automation framework for HRMS web application testing using Page Object Model (POM), BasePage architecture, reusable methods, dynamic locator handling, HTML reporting, and CI/CD-ready framework design focused on real-world automation practices.
+# Playwright JavaScript HRMS Automation Framework
+
+A scalable end-to-end test automation framework built using Playwright and JavaScript for HRMS web application testing. This project demonstrates Page Object Model (POM), reusable BasePage architecture, dynamic locator handling, reusable methods, reporting integration, and real-world automation framework design practices.
+
+## Tech Stack
+
+* Playwright
+* JavaScript
+* Node.js
+
+## Key Features
+
+* Page Object Model (POM)
+* BasePage reusable architecture
+* Dynamic locator handling
+* Reusable utility methods
+* Login validation scenarios
+* HTML reporting support
+* Scalable framework structure
+* CI/CD ready automation setup
+
+## Framework Goals
+
+* Build interview-ready automation skills
+* Practice real-world framework design
+* Improve maintainability and reusability
+* Learn scalable automation architecture
