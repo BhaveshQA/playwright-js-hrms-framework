@@ -1,5 +1,6 @@
 import { test, expect } from '@playwright/test'
 import { LoginPage } from '../pages/LoginPage.js'
+import {ObjectManager} from '../objectManager/ObjectManager.js'
 
 /**
  * Test suite for Login functionality of OrangeHRM application.
@@ -7,10 +8,13 @@ import { LoginPage } from '../pages/LoginPage.js'
  */
 test.describe("Login in test cases", async () => {
     let loginpage
+    let objManager = new ObjectManager(page);
     // Before each test, navigate to the login page and initialize LoginPage object
     test.beforeEach("Go to the Test url", async ({ page }) => {
         await page.goto("https://opensource-demo.orangehrmlive.com/web/index.php/auth/login")
-        loginpage = new LoginPage(page);
+        //loginpage = new LoginPage(page);
+       let objManager = new ObjectManager(page);
+       loginpage = objManager.getLoginPage();
     })
 
     /**
