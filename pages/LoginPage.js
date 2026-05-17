@@ -15,6 +15,7 @@ export class LoginPage extends BasePage {
         // Call parent class (BasePage) constructor to initialize the page object
         // This allows access to inherited methods like click() from BasePage
         super(page)
+        this.loginHeaderText = this.page.getByRole('heading',{name : "Login"})
         this.userName = this.page.getByPlaceholder('Username')
         this.passWord = this.page.getByPlaceholder('Password')
         this.loginBtn = this.page.getByRole('button', { name: 'Login' })
@@ -22,6 +23,10 @@ export class LoginPage extends BasePage {
         this.ErrorMessageWhenBothFieldsBlank = this.page.getByText("Required").first()
         this.ErrorMessageWhenInvalidCredential = this.page.getByText("Invalid credentials")
         this.leftsideMenuList = this.page.locator('aside.oxd-sidepanel li')
+    }
+
+    async validatePageHeading(){
+        return await this.getTextFromLocator(this.loginHeaderText);
     }
 
     /**

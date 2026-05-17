@@ -14,7 +14,6 @@ test("Verify that dashboard text visbile on after login on dashboard", async ({ 
 
     //verify the dashboard text
     await loginpage.login("Admin", "admin123")
-    const dashboardText = await dashboard.verifyDashboardTextAfterLogin();
-    console.log(dashboardText)
+    const dashboardText = await dashboard.validatePageHeading();
     expect(dashboardText).toBe("Dashboard")
 })

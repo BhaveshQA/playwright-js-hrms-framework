@@ -22,6 +22,10 @@ test.describe("Login in test cases", async () => {
      * Steps: Login with valid credentials, verify Upgrade button appears, click Admin menu
      */
     test("Verify login with valid credential", async ({ page }) => {
+
+        const loginPageHeaderText = await loginpage.validatePageHeading()
+        expect(loginPageHeaderText).toBe("Login")
+        
         // Login with valid credentials
         await loginpage.login("Admin", "admin123")
         // Verify Upgrade button is displayed

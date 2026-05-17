@@ -19,7 +19,8 @@ export class BasePage {
         await locator.click()
     }
 
-    async getTextFromLocator(locator){
+    async getTextFromLocator(locator) {
         return await locator.textContent()
     }
-}   
+
+}

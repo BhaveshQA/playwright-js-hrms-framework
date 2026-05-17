@@ -6,7 +6,7 @@ export class DashBoardPage extends BasePage {
 
     }
 
-    async verifyDashboardTextAfterLogin() {
+    async validatePageHeading() {
         return await this.getTextFromLocator(this.dashboardText);
     }
 }
