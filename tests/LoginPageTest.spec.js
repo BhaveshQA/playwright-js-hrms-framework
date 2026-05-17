@@ -8,7 +8,7 @@ import {ObjectManager} from '../objectManager/ObjectManager.js'
  */
 test.describe("Login in test cases", async () => {
     let loginpage
-    let objManager = new ObjectManager(page);
+   // let objManager = new ObjectManager(page);
     // Before each test, navigate to the login page and initialize LoginPage object
     test.beforeEach("Go to the Test url", async ({ page }) => {
         await page.goto("https://opensource-demo.orangehrmlive.com/web/index.php/auth/login")
