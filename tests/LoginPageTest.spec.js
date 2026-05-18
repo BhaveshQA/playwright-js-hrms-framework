@@ -12,8 +12,8 @@ test.describe("Login in test cases", async () => {
    // let objManager = new ObjectManager(page);
     // Before each test, navigate to the login page and initialize LoginPage object
     test.beforeEach("Go to the Test url", async ({ page }) => {
-        await page.goto(process.env.BASE_URL)
-        // await page.goto("/")
+       // await page.goto(process.env.BASE_URL)
+        await page.goto("/")
         //loginpage = new LoginPage(page);
        let objManager = new ObjectManager(page);
        loginpage = objManager.getLoginPage();
