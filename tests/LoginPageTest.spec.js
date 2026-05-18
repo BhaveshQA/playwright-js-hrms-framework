@@ -1,6 +1,7 @@
 import { test, expect } from '@playwright/test'
 import { LoginPage } from '../pages/LoginPage.js'
 import {ObjectManager} from '../objectManager/ObjectManager.js'
+import {loginData} from '../testdata/LoginUser.js'
 
 /**
  * Test suite for Login functionality of OrangeHRM application.
@@ -11,7 +12,8 @@ test.describe("Login in test cases", async () => {
    // let objManager = new ObjectManager(page);
     // Before each test, navigate to the login page and initialize LoginPage object
     test.beforeEach("Go to the Test url", async ({ page }) => {
-        await page.goto("https://opensource-demo.orangehrmlive.com/web/index.php/auth/login")
+        await page.goto(process.env.BASE_URL)
+        // await page.goto("/")
         //loginpage = new LoginPage(page);
        let objManager = new ObjectManager(page);
        loginpage = objManager.getLoginPage();
@@ -25,9 +27,9 @@ test.describe("Login in test cases", async () => {
 
         const loginPageHeaderText = await loginpage.validatePageHeading()
         expect(loginPageHeaderText).toBe("Login")
-        
+
         // Login with valid credentials
-        await loginpage.login("Admin", "admin123")
+        await loginpage.login(loginData.validUser.username,loginData.validUser.password )
         // Verify Upgrade button is displayed
         const getUpgradeText = await loginpage.getUpgradeBtnText()
         expect(getUpgradeText).toBe(" Upgrade")
@@ -54,7 +56,7 @@ test.describe("Login in test cases", async () => {
      */
     test("Verify login with invalid user name and password", async ({ page }) => {
         // Attempt login with invalid credentials
-        await loginpage.login("abc", "abc")
+        await loginpage.login(loginData.invalidUser.username,loginData.invalidUser.username)
         // Verify error message for invalid credentials
         const getErrorTextMsg = await loginpage.
         getErrorMessage(loginpage.ErrorMessageWhenInvalidCredential)
