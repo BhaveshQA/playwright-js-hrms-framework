@@ -21,7 +21,6 @@ A scalable end-to-end test automation framework built using Playwright and JavaS
 
 ## Framework Goals
 
-* Build interview-ready automation skills
-* Practice real-world framework design
+* Real-world framework design
 * Improve maintainability and reusability
-* Learn scalable automation architecture
+* Scalable automation architecture
